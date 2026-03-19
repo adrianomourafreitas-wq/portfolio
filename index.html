@@ -17,7 +17,7 @@
   color:#e5e7eb;
   }
 
-header{
+  header{
   position: sticky;       /* mantém a barra presa no topo */
   top: 0;
   z-index: 1000;
@@ -64,7 +64,7 @@ header::after{
 
 
 
-.grid{
+  .grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-content: center;
@@ -115,7 +115,6 @@ header::after{
 .card:hover::before{
   opacity:1;
 }
-
 
 
   @keyframes borderAnim{
@@ -702,8 +701,6 @@ body.certificado-aberto #fullscreenBtn {
 
   </footer>
 
-
-
   <script>
   const projetos = [
 
@@ -738,6 +735,14 @@ body.certificado-aberto #fullscreenBtn {
     descricao:"Sistema financeiro empresarial para gestão de custos, receitas e controle financeiro.",
     imagem:"finansys.png",
     link:"https://adrianomourafreitas-wq.github.io/financas/"
+    },
+
+    {
+    titulo:"Smart Data Assistant",
+    tipo:"ia",
+    descricao:"Assistente de IA criado para responder dúvidas sobre Power BI, automação, Python, HTML, CSS, JavaScript e análise de dados.",
+    imagem:"smartdataassistant.png",
+    link:"https://chatgpt.com/g/g-69b9a73981e8819186c4eafa6056079c-smart-data-assistant"
     },
 
       {
@@ -884,7 +889,8 @@ const logos = {
   python: "python.png",
   sql: "sql.png",
   powerpoint: "powerpoint.png",
-  web: "web.png"
+  web: "web.png",
+  ia: "ia.png"
 };
 
   const logoHTML = p.tipo 
@@ -904,7 +910,6 @@ const logos = {
 
   container.appendChild(card);
   }
-
 
 
   document.getElementById("fullscreenBtn").onclick=()=>{
@@ -997,9 +1002,6 @@ modalCertificados.addEventListener("click", (e) => {
     if (img) img.remove();
   }
 });
-
-
-
 
 
   </script>
