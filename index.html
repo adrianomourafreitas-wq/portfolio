@@ -210,13 +210,8 @@ border-radius: 0;
 object-fit: cover;
 }
 
-.video-avatar iframe{
-z-index: 1;
-}
-
-.video-avatar .foto{
-z-index: 2;
-}
+.video-avatar iframe{z-index: 1;}
+.video-avatar .foto{z-index: 2;}
 
 .video-avatar .moldura{
 position: absolute;
@@ -253,9 +248,7 @@ background:rgba(37,99,235,.85);
 transform:translateX(-50%) scale(1.05);
 }
 
-.video-avatar{
-cursor:pointer;
-}
+.video-avatar{cursor:pointer;}
 
 .social-footer{
 position:fixed;
@@ -316,9 +309,6 @@ box-shadow:0 0 10px rgba(0,0,0,.6);
 width:200px;
 height:90px;
 object-fit:contain;
-}
-
-.card .logo-tipo img{
 transition: transform .3s ease, filter .3s ease;
 }
 
@@ -331,7 +321,7 @@ filter: drop-shadow(0 0 12px rgba(59,130,246,.8));
 background: linear-gradient(180deg, #0b1f3a, #08162b);
 border:1px solid rgba(147,197,253,.12);
 box-shadow:0 10px 40px rgba(0,0,0,.4);
-transition:
+transition: 
 transform .25s ease-out,
 border .3s ease,
 box-shadow .3s ease,
@@ -359,21 +349,80 @@ justify-content:center;
 flex-wrap:wrap;
 }
 
+/* BOTÃO CERTIFICADOS COM EFEITO DE ONDAS */
 .btn-fixo-certificados{
 position: absolute;
-bottom: -57px;
+bottom: -28px;
 left: 50%;
 transform: translateX(-50%);
 background: transparent;
 border: none;
 padding: 0;
 cursor: pointer;
-z-index: 20;
+z-index: 2000;
+width:170px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.btn-fixo-certificados::before,
+.btn-fixo-certificados::after{
+content:"";
+position:absolute;
+inset:6px 8px;
+border-radius:999px;
+border:2px solid rgba(147,197,253,.75);
+box-shadow:
+0 0 10px rgba(147,197,253,.65),
+0 0 22px rgba(37,99,235,.45),
+inset 0 0 12px rgba(147,197,253,.25);
+animation:ondaCertificados 1.8s ease-out infinite;
+pointer-events:none;
+z-index:1;
+}
+
+.btn-fixo-certificados::after{
+animation-delay:.9s;
+border-color:rgba(255,255,255,.55);
+}
+
+@keyframes ondaCertificados{
+0%{
+transform:scale(.88);
+opacity:.95;
+}
+70%{
+opacity:.25;
+}
+100%{
+transform:scale(1.45);
+opacity:0;
+}
 }
 
 .btn-fixo-certificados img{
-width: 60px;
-height: auto;
+width:150px;
+height:auto;
+position:relative;
+z-index:3;
+transition:transform .3s ease, filter .3s ease;
+animation:pulseBotaoCertificado 2.4s ease-in-out infinite;
+}
+
+@keyframes pulseBotaoCertificado{
+0%,100%{
+filter:drop-shadow(0 0 5px rgba(255,255,255,.35));
+}
+50%{
+filter:drop-shadow(0 0 14px rgba(147,197,253,.95));
+}
+}
+
+.btn-fixo-certificados:hover img{
+transform:scale(1.1);
+filter:drop-shadow(0 0 16px rgba(59,130,246,.95));
 }
 
 .btn-voltar{
@@ -406,17 +455,6 @@ filter: brightness(1.1);
 .btn-voltar img{
 width: 200px;
 height: 200px;
-}
-
-.btn-fixo-certificados img{
-width:150px;
-height:auto;
-transition:transform .3s ease, filter .3s ease;
-}
-
-.btn-fixo-certificados:hover img{
-transform:scale(1.1);
-filter:drop-shadow(0 0 12px rgba(59,130,246,.8));
 }
 
 html{
